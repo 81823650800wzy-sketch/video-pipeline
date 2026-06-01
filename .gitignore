@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+data/
+bgm_library/*
+!bgm_library/.gitkeep
+!bgm_library/catalog.json
+*.mp4
+*.wav
+*.srt
+*.txt
+temp/
+output/
+assets/

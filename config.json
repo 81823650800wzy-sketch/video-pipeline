@@ -1,0 +1,67 @@
+{
+  "_version": "1.0",
+  "_description": "视频生产线 — 全自动视频制作流水线配置",
+
+  "pipeline": {
+    "output_drive": "E:/",
+    "project_base_dir": "E:/视频项目/",
+    "temp_dir": "E:/_pipeline_temp/",
+    "default_style": "auto",
+    "platform": "bilibili",
+    "resolution": {"width": 1920, "height": 1080},
+    "fps": 30,
+    "video_codec": "libx264",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "crf": 23,
+    "preset": "medium"
+  },
+
+  "ai_video": {
+    "enabled": false,
+    "provider_priority": ["dashscope", "kling", "seedance"],
+    "max_gap_duration": 30,
+    "min_gap_duration": 2,
+    "dashscope": {"api_key": "", "model": "wan2.7-t2v"},
+    "kling": {"api_key": "", "model": "kling-v1-5"},
+    "seedance": {"access_key": "", "secret_key": "", "model": "doubao-seedance-2.0"}
+  },
+
+  "reference": {
+    "enabled": true,
+    "bilibili_cookie_file": "",
+    "max_reference_videos": 3,
+    "scene_threshold": 27,
+    "min_scene_length": 1.0
+  },
+
+  "bgm": {
+    "mode": "local_first",
+    "local_library_dir": "~/.claude/skills/video-pipeline/bgm_library",
+    "pixabay_api_key": "",
+    "default_bpm": 120,
+    "default_mood": "upbeat_tech",
+    "ducking": {"enabled": true, "duck_level_db": -12, "attack_ms": 50, "release_ms": 300},
+    "fade": {"in_seconds": 1.5, "out_seconds": 2.0}
+  },
+
+  "editing": {
+    "intro_duration": 3,
+    "outro_duration": 4,
+    "ken_burns": {"enabled": true, "zoom_ratio": 1.1, "pan_speed": "slow"},
+    "gap_fill_mode": "text_card",
+    "title_font": "C:/Windows/Fonts/msyh.ttc"
+  },
+
+  "auto_caption": {
+    "skill_path": "~/.claude/skills/auto-caption",
+    "whisper_model": "small",
+    "language": "zh",
+    "burn_subtitles": true
+  },
+
+  "jianying": {
+    "auto_open": true,
+    "exe_path": "C:/Users/37682/AppData/Local/JianyingPro/Apps/10.2.0.13877/JianyingPro.exe"
+  }
+}
